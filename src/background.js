@@ -13,6 +13,8 @@ console.log('\nbackground running\n')
 
 var io = require('socket.io-client');
 
+var server = io('http://127.0.0.1:1234');
+
 // on chrome hearing call from content script (youtube.js)
 chrome.runtime.onMessage.addListener(
     function(request,sender,senderResponse){
