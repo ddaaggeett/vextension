@@ -1,21 +1,34 @@
 {
-  "name": "VexT web extension",
-  "version": "0.0",
-  "author": "Dave Daggett (david.g.daggett@gmail.com) <www.ddaaggeett.xyz>",
-  "manifest_version": 2,
-  "description": "web extension",
-  "icons": {
-    "16": "assets/images/icon16.png",
-    "48": "assets/images/icon48.png",
-    "128": "assets/images/icon128.png"
-  },
-  "content_scripts":
-  [
-    {
-      "matches": ["https://www.youtube.com/watch?v=*"],
-      "js": ["assets/jquery-3.2.1.min.js","src/youtube.js"],
-      "css": ["src/css.css"]
-    }
-  ],
-  "web_accessible_resources":["assets/*"]
+    "name": "vextension",
+    "version": "0.0",
+    "author": "Dave Daggett (david.g.daggett@gmail.com) <www.ddaaggeett.xyz>",
+    "manifest_version": 2,
+    "description": "vext web browser extension",
+    "icons": {
+        "16": "assets/images/icon16.png",
+        "48": "assets/images/icon48.png",
+        "128": "assets/images/icon128.png"
+    },
+    "browser_action": {
+        "default_popup": "src/index.html"
+    },
+    "background": {
+        "matches": ["https://www.youtube.com/watch?v=*"],
+        "scripts": [
+            "lib/vextension.background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts":
+    [
+        {
+            "matches": ["https://www.youtube.com/watch?v=*"],
+            "js": [
+                "assets/jquery-3.2.1.min.js",
+                "assets/socket.io.js",
+                "src/youtube.js"
+            ]
+        }
+    ],
+    "web_accessible_resources":["assets/*"]
 }
