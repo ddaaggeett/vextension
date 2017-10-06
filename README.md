@@ -1,16 +1,17 @@
 # VexTension
 
-send some server (localhost:1234) a youtube id while watching youtube. uses `socket.io`.
+send some server (localhost:1234) a youtube id while watching youtube. uses `[socket.io](https://socket.io/docs/client-api/)`
 
-trigger by pressing `Ctrl + ;` (that's '+ semicolon')`
+trigger by pressing `Ctrl + ;` (that's `+ semicolon`)
 
 ## to use
 
+    git clone git@github.com:ddaaggeett/vextension.git
     cd vextension/
 
 ### developer mode
 
-    npm run dev
+    npm start
 
 ### production mode
 
